@@ -140,8 +140,8 @@ const PaymentDetails = () => {
 const User = ({ user }) => {
   const navigate = useNavigate()
   return (
-    <div className='border-b flex w-full items-center h-16 justify-between'>
-      <div className='flex items-center gap-2'>
+    <div className='border-b flex-col sm:flex-row flex w-full gap-2 sm:gap-0 sm:items-center sm:h-16  sm:justify-between'>
+      <div className='flex mt-2 sm:mt-0 items-center gap-2'>
         <Avatar name={user.firstName[0].toUpperCase()} className="text-black bg-gray-200" />
         <div className='flex  flex-col gap-0.5'>
           <h3 className='font-medium text-gray-700 leading-none md:text-xl md:font-semibold text-base'>{user.firstName} {user.lastName}</h3>
@@ -150,7 +150,7 @@ const User = ({ user }) => {
       </div>
       <button onClick={() => {
         navigate("/send?id=" + user._id + "&name=" + user.firstName)
-      }} className={`text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm  dark:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2`}>{"Send Money"}</button>
+      }} className={`w-28 mb-2 sm:mb-0 self-end sm:self-auto md:w-32 text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm  dark:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2`}>{"Send Money"}</button>
     </div>
   )
 }

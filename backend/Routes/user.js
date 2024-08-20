@@ -12,7 +12,7 @@ const { default: mongoose } = require("mongoose");
 const alphaOnly = zod.string().regex(/^[A-Za-z0-9]*$/, "Names contain only alphabets and numbers,no spaces");
 
 const signupSchema = zod.object({
-  userName: zod.string().email({ message: "Enter Correct Email" }),
+  userName: zod.string().email({ message: "Enter Correct Email" }).max(25, { message: "Email is too large" }),
   password: zod
     .string()
     .min(8, { message: "Password should be of minimum 8 letters" }),
