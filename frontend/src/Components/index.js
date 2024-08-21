@@ -10,4 +10,5 @@ import SubHeading from "./SubHeading"
 import SendMoneyLoader from "./SendMoneyLoader"
 import LoaderForUpdateInfo from "./LoaderForUpdateInfo"
 import LoaderForHistory from "./LoaderForHistory"
-export { LoaderForHistory, SendMoneyLoader, LoaderForUpdateInfo, Avatar, Button, Card, Footer, Heading, Input, LoaderForDashboard, LoginScelton, SubHeading }
+import LoaderWebsite from "./LoaderWebsite"
+export { LoaderWebsite, LoaderForHistory, SendMoneyLoader, LoaderForUpdateInfo, Avatar, Button, Card, Footer, Heading, Input, LoaderForDashboard, LoginScelton, SubHeading }

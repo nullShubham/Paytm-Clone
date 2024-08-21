@@ -50,7 +50,7 @@ const Signup = () => {
         userName,
         password
       });
-      localStorage.setItem("authToken", res.data.token);
+      localStorage.setItem("tokenOfAuth", res.data.token);
       localStorage.setItem("urName", res.data.firstName)
       navigate("/dashboard")
     } catch (error) {

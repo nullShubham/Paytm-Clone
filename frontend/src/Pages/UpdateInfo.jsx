@@ -50,7 +50,7 @@ const UpdateInfo = () => {
         const hosted = import.meta.env.VITE_SERVER_URL + "/user"
         const res = await axios.put(hosted, updatedData, {
           headers: {
-            Authorization: "Bearer " + localStorage.getItem("authToken")
+            Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
           }
         });
         setSuccess(res.data.message);
@@ -83,10 +83,10 @@ const UpdateInfo = () => {
       const hosted = import.meta.env.VITE_SERVER_URL + "/user/delete"
       const res = await axios.delete(hosted, {
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("authToken")
+          Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
         }
       })
-      localStorage.removeItem("authToken");
+      localStorage.removeItem("tokenOfAuth");
       localStorage.removeItem("urName")
       navigate("/signup")
       setSuccess(res.data.message)
@@ -129,7 +129,7 @@ const UpdateInfo = () => {
 
             <button disabled={isBtnDisabled} type="button" className="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 mt-2 w-full  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600" onClick={() => {
               setIsBtnDisabled(true)
-              localStorage.removeItem("authToken")
+              localStorage.removeItem("tokenOfAuth")
               localStorage.removeItem("urName")
               setIsBtnDisabled(false)
               navigate("/signin")

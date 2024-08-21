@@ -54,7 +54,7 @@ const Dashboard = () => {
     }
     axios.get(hosted + filter, {
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("authToken")
+        Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
       }
     }).then(res => setUserList(res.data.user)).catch(err => console.log(err))
   }, [filter])
@@ -117,7 +117,7 @@ const PaymentDetails = () => {
       try {
         const res = await axios.get(hosted, {
           headers: {
-            Authorization: "Bearer " + localStorage.getItem("authToken")
+            Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
           }
         })
         setBalance(res.data.balance)
@@ -145,7 +145,7 @@ const User = ({ user }) => {
         <Avatar name={user.firstName[0].toUpperCase()} className="text-black bg-gray-200" />
         <div className='flex  flex-col gap-0.5'>
           <h3 className='font-medium text-gray-700 leading-none md:text-xl md:font-semibold text-base'>{user.firstName} {user.lastName}</h3>
-          <span className='text-sm font-medium text-gray-500 leading-none'>{user.userName}</span>
+          <span className='sm:text-sm text-[12px]  sm:leading-none font-medium text-gray-500'>{user.userName}</span>
         </div>
       </div>
       <button onClick={() => {

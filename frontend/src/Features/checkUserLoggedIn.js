@@ -4,7 +4,7 @@ const checkUserLoggedIn = async () => {
     try {
         const res = await axios.post(hosted, {}, {
             headers: {
-                Authorization: "Bearer " + localStorage.getItem("authToken")
+                Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
             }
         })
         return res.data.isUserLoggedIn;

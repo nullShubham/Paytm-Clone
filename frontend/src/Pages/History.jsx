@@ -13,7 +13,7 @@ const History = () => {
       try {
         const data = await axios.post(url, {}, {
           headers: {
-            Authorization: "Bearer " + localStorage.getItem("authToken")
+            Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
           }
         })
         setTransactionHistory(data.data.transactionsHistory);

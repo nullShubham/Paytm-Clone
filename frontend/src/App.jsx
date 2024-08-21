@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom"
 import { Dashboard, SendMoney, Signin, Signup, UpdateInfo } from "./Pages/index"
 import checkUserLoggedIn from "./Features/checkUserLoggedIn"
-import LoginScelton from "./Components/LoginScelton"
+import { LoaderWebsite } from "./Components/index"
 function App() {
 
   return (
@@ -36,7 +36,7 @@ const Loader = () => {
     checkAuth();
   }, [])
   return (
-    <LoginScelton />
+    <LoaderWebsite />
   )
 }
 export default App

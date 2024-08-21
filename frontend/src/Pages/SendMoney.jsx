@@ -52,7 +52,7 @@ const SendMoney = () => {
       },
         {
           headers: {
-            Authorization: "Bearer " + localStorage.getItem("authToken")
+            Authorization: "Bearer " + localStorage.getItem("tokenOfAuth")
           }
         }
       )
